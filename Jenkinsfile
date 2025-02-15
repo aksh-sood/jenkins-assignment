@@ -43,7 +43,6 @@ post {
                     exclusionPattern: '**/test/**'
                 )
         archiveArtifacts artifacts: '**/*.war'
-        archiveArtifacts artifacts: 'target/site/jacoco/index.html'
     }
 }
         }
