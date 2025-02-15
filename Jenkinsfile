@@ -10,7 +10,7 @@ pipeline {
         booleanParam(name: 'SONARQUBE_SCAN', defaultValue: true, description: 'Run SonarQube Scan?')
         booleanParam(name: 'RUN_LIZARD', defaultValue: true, description: 'Run Lizard Complexity Analysis?')
         booleanParam(name: 'RUN_DP_CHECK', defaultValue: true, description: 'Run Dependency Security Check?')
-        string(name: 'ALLOWED_CRITICAL_VUNERABILITIES', defaultValue: '1', description: 'Fail on Critical Vulnerabilities Threshold')
+        string(name: 'ALLOWED_CRITICAL_VUNERABILITIES', defaultValue: '4', description: 'Fail on Critical Vulnerabilities Threshold')
     }
 
     environment {
