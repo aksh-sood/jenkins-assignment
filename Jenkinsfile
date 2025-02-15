@@ -15,6 +15,7 @@ pipeline {
 
     environment {
         jobName = "${env.JOB_NAME}".tokenize('/').last()
+        scannerHome = tool 'sonar'
     }
 
     stages {
@@ -59,9 +60,6 @@ pipeline {
         stage("SonarQube Analysis & Quality Gate") {
             when {
                 expression { return params.SONARQUBE_SCAN }
-            }
-            environment {
-                scannerHome = tool 'sonar'
             }
             steps {
                 script {
