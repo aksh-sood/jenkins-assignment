@@ -19,22 +19,6 @@ pipeline {
 
     stages {
 
-        stage('Git Checkout') {
-            steps {
-                script {
-                    try {
-                        def branch = "${env.GIT_BRANCH}".replace("origin/", "")
-                        checkout([
-                            $class: 'GitSCM',
-                            branches: [[name: branch]],
-                            userRemoteConfigs: [[url: "${env.GIT_URL}"]]
-                        ])
-                    } catch (Exception e) {
-                        error "❌ Git checkout failed: ${e.message}"
-                    }
-                }
-            }
-        }
 
         stage('Build') {
             steps {
