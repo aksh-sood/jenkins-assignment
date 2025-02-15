@@ -9,22 +9,6 @@ pipeline {
     stages {
         
         
-        stage ('Git Checkout') {
-steps{
-    script {
-        
-       branch= "${env.GIT_BRANCH}".replace("origin/","")
-                    checkout([
-                $class: 'GitSCM',
-                branches: [[name: branch ]],
-                userRemoteConfigs: [[
-                    url: "${env.GIT_URL}",
-                    // credentialsId: 'your-credentials-id'
-                ]]
-            ])
-    }
-}
-        }
 
 
 
