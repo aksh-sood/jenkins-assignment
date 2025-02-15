@@ -164,7 +164,20 @@ pipeline {
                                 classifier: '',
                                 file: 'target/vprofile-v2.war',
                                 type: 'war'
-                            ]]
+                            ],
+                        [
+                            artifactId: 'lizard-report',
+                            classifier: '',
+                            file: "lizard-${jobName}.txt",
+                            type: 'txt'
+                        ],
+                        [
+                            artifactId: 'dependency-check-report',
+                            classifier: '',
+                            file: "dependency-check-report-${jobName}.xml",
+                            type: 'xml'
+                        ]
+]
                         )
                     } catch (Exception e) {
                         error "❌ Artifact upload failed: ${e.message}"
